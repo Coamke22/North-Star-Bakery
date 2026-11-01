@@ -1,52 +1,67 @@
 <!doctype html>
     <html lang="en">
         <head> 
-           
+           <link rel="stylesheet" href="CSS/styles.css">
         </head>
     <body class="body">
-        <a href="#main-content">Skip to main content</a>    
+            
         <header>
-            <nav aria-label="Primary">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+           <nav aria-label="primary-naviagtion" class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact/Order</a>
+                
             </nav>
         </header>
 
     
         <h1 align="center" >
             <business-name>North Star Bakery</business-name> <br>
+        </h1>
+        <h2>    
             <street-address1> 120 Main Street</street-address1> <br>
             <city-state-zip>Clifton Park, NY 12065</city-state-zip> <br>
             <phone>518-555-1212</phone><br>
             <hours-of-operation>Open daily from 5AM - 2PM</hours-of-operation>
-        <h1>
-            <h2>Inquiries and Pre Orders</h2>
-<form action="/submitcontact" method="post">
+        <h2>
+            <h3>Inquiries and Pre Orders</h3>
+<form id="north-star-contact">
+    <div class="container-div">
     <fieldset>
         <legend>Contact Information</legend>
-            <label>Name:
-                <input type="text" name="Name"></label>
+            <label class="form-label">Name:</label>
+                <input type="text" id="contact-username">
                 <br><br>
-            <label>Email: <input type="email" name="email"></label>
+            <label class="form-label">Email:</label> <input type="email" id="contact-email">
                 <br><br>
     </fieldset>
     <fieldset>
+        <legend>Comments</legend>
+            <label>Comment:</label><textarea id="contact-comment" rows="5" cols="100"></textarea>
+                <br><br>
+    </fieldset>
+    
+    <fieldset >
         <legend>Pre Order Details</legend>
-            <label>Pickup Date :<input type="date" name="pickup-date"></label>
+            <label class="form-label">Pickup Date :</label><input type="date" id="contact-pickup-date">
                 <br><br>
-            <label>Request Type :<input type="text" name="request-type"></label>
+            <label class="form-label">Request Type :</label><input type="text" id="contact-request-type">
                 <br><br>
-            <label>Item Details :<input type="text" name="item-details"></label>
+                
+            <label class="form-label">Item Details :</label><input type="text" id="contact-item-details">
                 <br><br>
-            <label>Allergy notes, if applicable :<input type="text" name="allergies"></label>
+            <label>Allergy notes, if applicable :</label><textarea id="contact-allergies" rows="5" cols="100"></textarea>
                 <br><br>
         </fieldset>
         <br>
+        
+
+     
     <button type="submit">Submit</button>
+          <button type="button" id="showDataBtn">Show Saved Data</button>
+    <div id="past-orders"></div>
+    </div>
 </form>
         
          <footer>
@@ -54,5 +69,7 @@
             <p align="center">Open daily from 5AM - 2 PM</p>
             <p align="center">&copy; 2026 North Star Bakery</p>
          </footer>
+
+         <script src="js/script.js"></script>
     </body>
 </html>
