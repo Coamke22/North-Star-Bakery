@@ -19,47 +19,55 @@
         <h1 align="center" >
             <business-name>North Star Bakery</business-name> <br>
         </h1>
+   
         <h2>    
             <street-address1> 120 Main Street</street-address1> <br>
             <city-state-zip>Clifton Park, NY 12065</city-state-zip> <br>
             <phone>518-555-1212</phone><br>
             <hours-of-operation>Open daily from 5AM - 2PM</hours-of-operation>
         <h2>
-            <h3>Inquiries and Pre Orders</h3>
+        <h3>Inquiries and Pre Orders</h3>
 <form id="north-star-contact">
     <div class="container-div">
-    <fieldset>
-        <legend>Contact Information</legend>
-          <label class="form-label">Email:</label> <input type="email" id="contact-email">
-          <span class="error-message" id="email-error"></span>
-          <button type="button" id="showDataBtn">Auto fill form</button>
-          
-                <br><br>  
-        <label class="form-label">First Name:</label>
-                <input type="text" id="contact-firstname" minlength="1" maxlength="25">
-                <br><br>
-                <label class="form-label">Last Name:</label>
-                <input type="text" id="contact-lastname" minlength="1" maxlength="50">
-                <br><br>
-                 <label class="form-label">Phone:</label>
-                <input type="tel" id="contact-phone" name="contact-phone">
-                 <span class="error-message" id="phone-error"></span>
-                <br><br>
-                   <input type="radio" name="toggleGroup" value="optpreorder" checked><label> Submit Pre Order
-                    </label>
-                   <input type="radio" name="toggleGroup" value="optcomment" > <Label>Submit Comment
-                    </label>
-          
-    </fieldset>
-  
+        <fieldset>
+         
+            <legend>Contact Information</legend>
+         
+            <label class="form-label">Email:</label> <input type="email" id="contact-email">
+            <span class="error-message" id="email-error"></span>
+         
+            <button type="button" id="showDataBtn">Auto fill form</button>
+            
+                    <br><br>  
+            <label class="form-label">First Name:</label>
+                    <input type="text" id="contact-firstname" minlength="1" maxlength="25">
+                    <br><br>
+            <label class="form-label">Last Name:</label>
+                    <input type="text" id="contact-lastname" minlength="1" maxlength="50">
+                    <br><br>
+            <label class="form-label">Phone:</label>
+                    <input type="tel" id="contact-phone" name="contact-phone">
+                    <span class="error-message" id="phone-error"></span>
+                    <br><br>
+            <input type="radio" name="toggleGroup" value="optpreorder" checked><label> Submit Pre Order
+                        </label>
+            <input type="radio" name="toggleGroup" value="optcomment" > <Label>Submit Comment
+                        </label>
+            
+        </fieldset>
+    
     <fieldset id="fldcomment" style="display: none;">
+        
         <legend>Comments</legend>
-            <label></label><textarea id="contact-comment" rows="2" cols="100"></textarea>
+        
+        <label></label><textarea id="contact-comment" rows="2" cols="100"></textarea>
                 <br><br>
     </fieldset>
     
     <fieldset id="fldpreorder" >
+        
         <legend>Pre Order Details</legend>
+        
         <h3>Someone form our team willl contact you shortly to confirm your order details!</h3>
             <label class="form-label">Pickup Date :</label><input type="date" id="contact-pickup-date">
                 <br><br>
@@ -82,16 +90,18 @@
             <label>Allergy notes, if applicable :</label><br><textarea id="contact-allergies" rows="2" cols="75"></textarea>
                 <br><br>
         </fieldset>
+        
         <br>
         
 
      <div class="button-container">
 
         <button type="submit">Submit</button>
-       </div>    
-          
-    
+       
+    </div>    
+       
     </div>
+
 </form>
         
          <footer>
