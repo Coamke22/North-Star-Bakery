@@ -30,17 +30,17 @@
     <div class="container-div">
     <fieldset>
         <legend>Contact Information</legend>
-          <label class="form-label">Email:</label> <input type="email" id="contact-email">
+          <label class="form-label">Email:</label> <input type="email" id="contact-email" required>
           <button type="button" id="showDataBtn">Auto fill form</button>
                 <br><br>  
         <label class="form-label">First Name:</label>
-                <input type="text" id="contact-firstname">
+                <input type="text" id="contact-firstname" minlength="1" maxlength="25">
                 <br><br>
                 <label class="form-label">Last Name:</label>
-                <input type="text" id="contact-lastname">
+                <input type="text" id="contact-lastname" minlength="1" maxlength="50" required>
                 <br><br>
                  <label class="form-label">Phone:</label>
-                <input type="text" id="contact-phone">
+                <input type="tel" id="contact-phone" name="contact-phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Enter phone as 518-555-1212">
                 <br><br>
                    <input type="radio" name="toggleGroup" value="optpreorder" checked><label> Submit Pre Order
                     </label>
