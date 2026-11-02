@@ -131,7 +131,17 @@ article {
 button{
   width:150px;
 }
-img {
-    max-width: 100%;
-    height: auto;
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically (if container has height) */
+}
+
+.checkbox-group {
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction:column;
+  padding: 0;
+  width:auto;
 }

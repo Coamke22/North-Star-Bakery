@@ -6,57 +6,62 @@ document.addEventListener('DOMContentLoaded', () => {
         // Prevent the default form submission behavior (page reload)
         event.preventDefault();
 
-        // Gather data from form inputs
+        // Gather data element values from the page
         const formData = {
-            username: document.getElementById('contact-username').value,
+            firstname: document.getElementById('contact-firstname').value,
+            lastname: document.getElementById('contact-lastname').value,
             email: document.getElementById('contact-email').value,
+            phone: document.getElementById('contact-phone').value,
             pickupDate: document.getElementById('contact-pickup-date').value,
             request: document.getElementById('contact-request-type').value
         };
-
-        const jsonString = JSON.stringify(formData);
-        localStorage.setItem('userRequestData', jsonString);
-
-        alert('Data successfully saved to local storage!');
-        form.reset();
-    });
+        
+        localStorage.setItem('userData', JSON.stringify(formData));
+      
+// clear the form once data is submitted
+        form.reset()
+             });
 });
 
 
-// return data already saved
+// populate the form fields based on email address
 document.getElementById('showDataBtn').addEventListener('click', function() {
     const searchEmail = document.getElementById('contact-email').value.trim().toLowerCase();
-    const outputDiv = document.getElementById('past-orders');
-
+    const outputDiv = document.getElementById('outputDiv');
+//If no email, prompt for one
     if (!searchEmail) {
         alert('Please enter an email address to look up saved data.');
         return;
     }
-
-    // Get records from local storage
-    const savedEntries = JSON.parse(localStorage.getItem('userRequestData')) || [];
-  alert(savedEntries.length)
-    // Filter records matching the typed email address
-    const matchingEntries = savedEntries.filter(entry => entry.email === searchEmail);
- 
-
-    if (matchingEntries.length > 0) {
-        // Format and display the matched results
-        let htmlContent = `<h3>Found ${matchingEntries.length} record(s):</h3>`;
-        matchingEntries.forEach((entry, index) => {
-            htmlContent += `
-                <div style="border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 10px;">
-                    <p><strong>Record #${index + 1}</strong></p>
-                    <p><strong>Username:</strong> ${entry.username}</p>
-                    <p><strong>Date:</strong> ${entry.pickupDate}</p>
-                    <p><strong>Request:</strong> ${entry.request}</p>
-                </div>
-            `;
-        });
-        outputDiv.innerHTML = htmlContent;
-        outputDiv.style.display = 'block';
-    } else {
-        outputDiv.innerHTML = `<p style="color: red;">No saved records found for: <strong>${searchEmail}</strong></p>`;
-        outputDiv.style.display = 'block';
+    const settingsJSON = localStorage.getItem("userData");
+    const settings = JSON.parse(settingsJSON);
+//check object to make sure it is valid and each element for null prior to attempting to populate
+if (settings !== null)  {
+    if (settings.firstname !== undefined) {
+        document.getElementById('contact-firstname').value = settings.firstname;
     }
+    if (settings.lastname !== undefined) {
+        document.getElementById('contact-lastname').value = settings.lastname;
+    }
+    if (settings.phone !== undefined) {
+        document.getElementById('contact-phone').value = settings.phone;
+    }
+}
+});
+
+const radios = document.querySelectorAll('input[name="toggleGroup"]');
+const container1 = document.getElementById('optpreorder');
+const container2 = document.getElementById('optcomment');
+//toggle between the preorder and comment submissions
+radios.forEach(radio => {
+  radio.addEventListener('change', (e) => {
+    alert(e.target.value)
+    if (e.target.value === 'optpreorder') {
+      fldpreorder.style.display = 'block';
+      fldcomment.style.display = 'none';
+    } else {
+      fldpreorder.style.display = 'none';
+      fldcomment.style.display = 'block';
+    }
+  });
 });

@@ -30,37 +30,64 @@
     <div class="container-div">
     <fieldset>
         <legend>Contact Information</legend>
-            <label class="form-label">Name:</label>
-                <input type="text" id="contact-username">
+          <label class="form-label">Email:</label> <input type="email" id="contact-email">
+          <button type="button" id="showDataBtn">Auto fill form</button>
+                <br><br>  
+        <label class="form-label">First Name:</label>
+                <input type="text" id="contact-firstname">
                 <br><br>
-            <label class="form-label">Email:</label> <input type="email" id="contact-email">
+                <label class="form-label">Last Name:</label>
+                <input type="text" id="contact-lastname">
                 <br><br>
+                 <label class="form-label">Phone:</label>
+                <input type="text" id="contact-phone">
+                <br><br>
+                   <input type="radio" name="toggleGroup" value="optpreorder" checked><label> Submit Pre Order
+                    </label>
+                   <input type="radio" name="toggleGroup" value="optcomment" > <Label>Submit Comment
+                    </label>
+          
     </fieldset>
-    <fieldset>
+  
+    <fieldset id="fldcomment" style="display: none;">
         <legend>Comments</legend>
-            <label></label><textarea id="contact-comment" rows="5" cols="100"></textarea>
+            <label></label><textarea id="contact-comment" rows="2" cols="100"></textarea>
                 <br><br>
     </fieldset>
     
-    <fieldset >
+    <fieldset id="fldpreorder" >
         <legend>Pre Order Details</legend>
+        <h3>Someone form our team willl contact you shortly to confirm your order details!</h3>
             <label class="form-label">Pickup Date :</label><input type="date" id="contact-pickup-date">
                 <br><br>
-            <label class="form-label">Request Type :</label><input type="text" id="contact-request-type">
-                <br><br>
-                
+            
+            <label>Choose the products you are interested in:</label>
+  
+                <div class="checkbox-group">
+                    <label1>
+                    <input type="checkbox" name="productslist" value="breads">Breads</label1>
+                    <label1>
+                    <input type="checkbox" name="hobbies" value="cakes">Cakes</label1>
+                    <label1>
+                    <input type="checkbox" name="hobbies" value="cookies">Cookies</label1>
+                    <label1>
+                    <input type="checkbox" name="hobbies" value="pastries">Pastries</label1>
+                </div> 
+<br>
             <label class="form-label">Item Details :</label><input type="text" id="contact-item-details">
                 <br><br>
-            <label>Allergy notes, if applicable :</label><textarea id="contact-allergies" rows="5" cols="100"></textarea>
+            <label>Allergy notes, if applicable :</label><textarea id="contact-allergies" rows="2" cols="100"></textarea>
                 <br><br>
         </fieldset>
         <br>
         
 
-     
-    <button type="submit">Submit</button>
-          <button type="button" id="showDataBtn">Show Saved Data</button>
-    <div id="past-orders"></div>
+     <div class="button-container">
+
+        <button type="submit">Submit</button>
+       </div>    
+          
+    
     </div>
 </form>
         
