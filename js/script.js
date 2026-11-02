@@ -3,7 +3,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('north-star-contact');
      
     form.addEventListener('submit', (event) => {
-        // Prevent the default form submission behavior (page reload)
+        document.getElementById("email-error").textContent="";
+        document.getElementById("phone-error").textContent="";
+
+        const emailError = isValidEmail(document.getElementById('contact-email').value)
+        //validate email
+        if (emailError === false){
+              document.getElementById("email-error").textContent="Email format is invalid (user@email.com)"
+        }
+        //validate phone
+        const phoneError = isValidPhone(document.getElementById('contact-phone').value)
+        if (phoneError === false){
+            event.preventDefault();
+            document.getElementById("phone-error").textContent="Phone format is invalid.  Please use 518-555-1212"
+        }
+
+        if (phoneError === false || phoneError === false)  {
+                event.preventDefault();
+                return;
+            }
 
         // Gather data element values from the page
         const formData = {
@@ -50,7 +68,7 @@ const container2 = document.getElementById('optcomment');
 //toggle between the preorder and comment submissions
 radios.forEach(radio => {
   radio.addEventListener('change', (e) => {
-    alert(e.target.value)
+    
     if (e.target.value === 'optpreorder') {
       fldpreorder.style.display = 'block';
       fldcomment.style.display = 'none';
@@ -60,3 +78,13 @@ radios.forEach(radio => {
     }
   });
 });
+
+function isValidEmail(email) {
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+return emailPattern.test(email);
+}
+
+function isValidPhone(phone) {
+const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+return phonePattern.test(phone);
+}

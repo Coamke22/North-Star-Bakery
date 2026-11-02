@@ -129,7 +129,7 @@ article {
 }
 
 button{
-  width:150px;
+  width:100px;
 }
 img {
     max-width: 100%;
@@ -149,3 +149,5 @@ img {
   padding: 0;
   width:auto;
 }
+.error-message { color: red; font-size: 0.875rem; }
+.input-error { border: 2px solid red; }
